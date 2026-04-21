@@ -1,3 +1,5 @@
+local host link-http://localhost:3000/
+
 # 🎵 Rhythmix — Full-Stack Music Player
 
 A production-grade music player with synchronized lyrics, real-time WebSocket sync, user authentication, playlist management, and a sleek dark UI.
