@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  # MongoDB
+  mongo:
+    image: mongo:7
+    container_name: rhythmix-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: rhythmix
+
+  # Backend API
+  backend:
+    build: ./backend
+    container_name: rhythmix-api
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGO_URI: mongodb://mongo:27017/rhythmix
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      CLIENT_URL: http://localhost:3000
+    volumes:
+      - uploads_data:/app/uploads
+    depends_on:
+      - mongo
+
+  # Frontend (served via Nginx after build)
+  frontend:
+    build: ./frontend
+    container_name: rhythmix-web
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
+  uploads_data:

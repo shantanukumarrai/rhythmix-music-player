@@ -1,0 +1,45 @@
+/* App layout grid */
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 1fr 90px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 1;
+  overflow-y: auto;
+  background: var(--bg);
+  padding: 32px;
+}
+
+/* Loading screen */
+.loadingScreen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.loadingLogo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: pulse 1.5s ease infinite;
+}
+
+.loadingDot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 16px var(--accent);
+  animation: spin 1s linear infinite;
+}

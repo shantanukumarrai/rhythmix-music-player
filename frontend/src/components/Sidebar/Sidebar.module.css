@@ -1,0 +1,185 @@
+.sidebar {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.logo {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.logoDot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.nav {
+  padding: 12px 0 8px;
+  flex-shrink: 0;
+}
+
+.navLabel {
+  display: block;
+  padding: 0 20px 6px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-family: var(--mono);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text2);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all var(--transition);
+}
+.navItem:hover { color: var(--text); background: var(--bg3); }
+.navItem.active { color: var(--accent); border-left-color: var(--accent); background: rgba(184,255,90,0.05); }
+
+.navIcon { width: 20px; text-align: center; font-size: 16px; }
+
+/* Playlists */
+.playlists {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+.playlistsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px 6px 20px;
+}
+
+.addBtn {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  font-size: 18px;
+  color: var(--text3);
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--transition);
+}
+.addBtn:hover { color: var(--accent); background: var(--bg3); }
+
+.createForm { padding: 0 16px 8px; }
+.createForm input { font-size: 13px; padding: 8px 10px; }
+
+.playlistList { flex: 1; overflow-y: auto; padding-bottom: 8px; }
+
+.playlistItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 20px;
+  text-decoration: none;
+  transition: background var(--transition);
+  border-left: 2px solid transparent;
+}
+.playlistItem:hover { background: var(--bg3); }
+.playlistItem.active { border-left-color: var(--accent2); background: rgba(124,95,255,0.05); }
+
+.plThumb {
+  width: 32px; height: 32px;
+  border-radius: 6px;
+  background: var(--bg4);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.plInfo { min-width: 0; }
+.plName { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.plCount { font-size: 11px; color: var(--text3); }
+
+/* Footer */
+.footer {
+  padding: 12px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.themeBtn {
+  font-size: 12px;
+  color: var(--text3);
+  font-family: var(--mono);
+  padding: 6px 0;
+  text-align: left;
+  transition: color var(--transition);
+}
+.themeBtn:hover { color: var(--accent); }
+
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.userAvatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--accent2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logoutBtn {
+  font-size: 18px;
+  color: var(--text3);
+  padding: 4px;
+  border-radius: 4px;
+}
+.logoutBtn:hover { color: var(--accent3); }
+
+.loginBtn {
+  background: var(--accent);
+  color: #0a0a0f;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 8px;
+  width: 100%;
+  transition: all var(--transition);
+}
+.loginBtn:hover { opacity: 0.9; transform: translateY(-1px); }

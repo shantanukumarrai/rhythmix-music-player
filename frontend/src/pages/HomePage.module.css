@@ -1,0 +1,76 @@
+.page { display: flex; flex-direction: column; gap: 40px; }
+
+/* Hero */
+.hero {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  min-height: 140px;
+}
+
+.heroLabel {
+  font-size: 11px;
+  font-family: var(--mono);
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.heroTitle {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.heroSub {
+  font-size: 14px;
+  color: var(--text2);
+  margin-top: 8px;
+}
+
+.heroViz {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 80px;
+  opacity: 0.4;
+}
+
+.heroBar {
+  width: 6px;
+  background: linear-gradient(to top, var(--accent2), var(--accent));
+  border-radius: 3px;
+  animation: barBounce 1.2s ease-in-out infinite;
+}
+
+/* Sections */
+.section { display: flex; flex-direction: column; gap: 16px; }
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+/* Card grid */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+/* Loading skeletons */
+.loading { display: flex; flex-direction: column; gap: 8px; }
+.skeleton {
+  height: 56px;
+  background: var(--bg2);
+  border-radius: 8px;
+  animation: pulse 1.5s ease infinite;
+}
